@@ -1,0 +1,24 @@
+<div class="notes-grid">
+  <div class="left-pane surface">
+    <app-notes-list
+      [notes]="filteredNotes()"
+      [loading]="loading()"
+      (select)="handleSelect($event)"
+      (create)="handleCreate()"
+    ></app-notes-list>
+  </div>
+  <div class="right-pane surface" *ngIf="selectedNote(); else emptyState">
+    <app-note-editor
+      [note]="selectedNote()!"
+      (save)="handleSave($event)"
+      (delete)="handleDelete($event)"
+    ></app-note-editor>
+  </div>
+  <ng-template #emptyState>
+    <div class="surface empty">
+      <div class="empty-title">Select or create a note</div>
+      <div class="empty-sub">Your notes will appear here for editing.</div>
+      <button class="btn btn-primary" (click)="handleCreate()">+ New Note</button>
+    </div>
+  </ng-template>
+</div>

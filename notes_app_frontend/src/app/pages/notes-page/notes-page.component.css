@@ -1,0 +1,45 @@
+.notes-grid {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 16px;
+}
+
+.left-pane {
+  padding: 12px;
+  overflow: auto;
+  max-height: calc(100vh - 140px);
+}
+
+.right-pane {
+  padding: 12px;
+  min-height: 420px;
+}
+
+.empty {
+  padding: 32px;
+  display: grid;
+  gap: 10px;
+  place-content: center;
+  min-height: 380px;
+  text-align: center;
+}
+
+.empty-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.empty-sub {
+  color: #6B7280;
+  margin-bottom: 8px;
+}
+
+/* Responsive layout */
+@media (max-width: 1024px) {
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+  .left-pane {
+    max-height: unset;
+  }
+}

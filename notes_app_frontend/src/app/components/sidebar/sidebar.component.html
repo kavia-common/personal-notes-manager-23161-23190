@@ -1,0 +1,29 @@
+<aside class="surface sidebar">
+  <div class="section">
+    <div class="section-title">Navigation</div>
+    <nav class="nav">
+      <button class="nav-item" [class.active]="selected === 'all'" (click)="select('all')">
+        <span>All Notes</span>
+      </button>
+      <button class="nav-item" [class.active]="selected === 'pinned'" (click)="select('pinned')">
+        <span>Pinned</span>
+      </button>
+      <button class="nav-item" [class.active]="selected === 'archived'" (click)="select('archived')">
+        <span>Archived</span>
+      </button>
+    </nav>
+  </div>
+
+  <hr class="separator" />
+
+  <div class="section">
+    <div class="section-title">Tags</div>
+    <div class="tags">
+      <button class="tag-btn" *ngFor="let tag of tags" (click)="applyTag(tag)">#{{ tag }}</button>
+    </div>
+  </div>
+
+  <div class="section" style="margin-top:auto;">
+    <button class="btn btn-secondary" style="width:100%;" (click)="triggerCreate()">+ New Note</button>
+  </div>
+</aside>

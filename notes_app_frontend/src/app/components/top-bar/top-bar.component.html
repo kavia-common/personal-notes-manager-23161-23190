@@ -1,0 +1,18 @@
+<header class="surface topbar">
+  <div class="brand">
+    <div class="logo">🧭</div>
+    <div class="meta">
+      <div class="title">Ocean Notes</div>
+      <div class="subtitle">Personal Notes Manager</div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <div class="search-wrapper">
+      <input class="input" type="text" placeholder="Search notes..." [(ngModel)]="query" />
+    </div>
+    <button class="btn btn-primary" (click)="onCreate()">
+      <span style="font-weight:600;">+ New Note</span>
+    </button>
+  </div>
+</header>

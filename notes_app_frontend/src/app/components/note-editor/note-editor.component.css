@@ -1,0 +1,32 @@
+.editor-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.title-input {
+  flex: 1;
+  font-weight: 700;
+  font-size: 18px;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.content-area {
+  min-height: 420px;
+  line-height: 1.6;
+}
+
+.editor-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  color: #6B7280;
+}
+.meta-item {
+  font-size: 12px;
+}

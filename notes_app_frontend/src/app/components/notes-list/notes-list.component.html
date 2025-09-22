@@ -1,0 +1,19 @@
+<div class="list-header">
+  <div class="title">Notes</div>
+  <button class="icon-btn" title="Create" (click)="create.emit()">➕</button>
+</div>
+
+<div *ngIf="loading" class="loading">Loading notes…</div>
+
+<div class="notes-list">
+  <button class="note-card" *ngFor="let note of notes" (click)="select.emit(note)">
+    <div class="note-title">{{ note.title || 'Untitled' }}</div>
+    <div class="note-snippet">{{ note.content || 'No content yet.' }}</div>
+    <div class="note-meta">
+      <div class="tags" *ngIf="note.tags?.length">
+        <span class="tag" *ngFor="let t of note.tags">{{ t.name }}</span>
+      </div>
+      <span class="date">{{ note.updatedAt || note.createdAt | date:'medium' }}</span>
+    </div>
+  </button>
+</div>

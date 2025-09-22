@@ -1,0 +1,15 @@
+<div class="editor-header">
+  <input class="input title-input" [(ngModel)]="note.title" placeholder="Note title" />
+  <div class="header-actions">
+    <button class="btn icon-btn" title="Delete" (click)="onDelete()">🗑️</button>
+    <button class="btn btn-primary" (click)="onSave()">Save</button>
+  </div>
+</div>
+
+<textarea class="textarea content-area" [(ngModel)]="note.content" placeholder="Start typing your note..."></textarea>
+
+<div class="editor-footer">
+  <div class="meta">
+    <span class="meta-item">Last updated: {{ note.updatedAt || note.createdAt | date:'medium' }}</span>
+  </div>
+</div>

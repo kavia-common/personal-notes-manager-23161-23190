@@ -1,3 +1,9 @@
-<div class="container">
-  <h1>{{ title }}</h1>
+<div class="container-fluid" style="display:flex; flex-direction:column;">
+  <app-top-bar (createRequested)="sidebar?.triggerCreate()"></app-top-bar>
+  <div style="display:flex; gap:16px; padding:16px;">
+    <app-sidebar #sidebar style="width:300px; flex:0 0 300px;"></app-sidebar>
+    <div class="surface" style="flex:1; padding:16px; min-height: calc(100vh - 100px);">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
